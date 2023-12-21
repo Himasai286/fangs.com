@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>Review</title>
+   <link href="styleall.css"rel="stylesheet">
+   <style>       
+       .subsubbox
+       {
+           position: relative;
+           background-color: #1f2833;    
+           margin: 10px;
+           border-radius: 25px;
+           display: flex;  
+           justify-content: center;
+       }
+       iframe
+       {
+           height: 80px;
+           border:none;
+           border-radius: 25px;
+       }    
+       #bug
+       {
+           position: relative;
+           font-size: 13px;
+           padding: 8px;
+       }     
+       h4
+       {
+           position: absolute;
+           top: -1px;     
+           opacity: 1; 
+           color: #45a28e;
+       }
+       .report
+       {
+           position: relative;
+           display: flex;
+           align-items:center;
+           justify-content: center;                  
+       }
+       .button 
+       {
+           z-index: 99;
+           cursor: pointer;
+           position: absolute;
+           display: flex;
+           justify-content: center;
+           align-items: center:
+           height: 80px;
+           width: 80px;
+           background: #66fcf1;
+           border-radius: 25px;
+           color: #0b0c10;
+           top:-30px;
+           box-shadow: 0px 0px 8px #c5c6c7, 0px 0px 8px #c5c6c7 inset;
+       }
+       .social
+       {
+           opacity: 0;
+           position: relative; 
+           margin: 10px;
+           width: 50px;
+           height: 50px;
+           border-radius: 100%;
+           display: inline-block;
+           color: #1f2833;
+           font-size: 20px;
+           text-align: center;
+           box-shadow: 0px 0px 8px #c5c6c7, 0px 0px 8px #c5c6c7 inset;
+       }
+       .twitter 
+       {
+            background: #66fcf1;
+            display:flex;
+            align-items: center;
+            justify-content: center;
+       }
+       .clicked 
+       {
+            opacity: 1;
+            transition: 1.6s all ease;
+            transform: translateY(6px);
+            cursor: pointer;
+       }
+       .klicked
+       {
+            display: none;
+       }
+       .shape 
+       {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            transform: scale(0.8);
+       } 
+       .cir 
+       {
+            position: absolute;
+            border-radius: 50%;
+            z-index: 5;
+       }
+       .btn-contain 
+       {
+            width: 240px;
+            height: 100px;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+       }
+       .btn
+       {
+            height: 25px;
+            width: 80px;
+            position: absolute;
+            border:none;
+            top: 50%;
+            Left: 50%;
+            transform: translate(-50%, -50%);
+            border-radius: 25px;
+            background: #66fcf1;
+            font-size: 16px;
+            color: #0b0c10;
+            transition: 0.2s;
+            cursor: pointer;
+            box-shadow: 0px 0px 8px #c5c6c7;
+        }
+        .btn:active,.btn:hover,.btn:focus
+        {
+            outline: none !important;
+        }
+        .btn-particles 
+        {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            border-radius: 50%;
+            color: blue;
+            font-family: monospac;
+            z-index: 5;
+       }
+       .btn:active 
+       {
+             transform: scale(0.9) translat(-55%,-55%);
+        }
+        .list
+        {
+            display: flex;
+            position: relative;
+        }
+        ul
+        {
+            position: relative;
+            color: #45a28e;
+            font-size: 16px;
+            padding-left: 30px;
+            padding-bottom: 20px;            
+        }
+        li
+        {
+            color: #c5c6c7;
+            font-size: 12px;
+        }
+        #copy
+        {
+            list-style: none;
+            color: #66fcf1;
+        }
+        a
+        {
+            cursor: default;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+      <script type="module" src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.esm.js"</script> 
+    <script nomodule="" src="https://unpkg.com/ionicons@latest/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
+     <table id="tableassign" border="0">
+        <caption style="text-align:left"> <h2>Review</h2></caption>
+        <tr>
+            <td>
+               <div class="subbox">
+                  <h3>Rate us &#129488;</h3>
+                  <div class="subsubbox" style="height:90px;">
+                     <iframe src="rate.html" scrolling="no"> </iframe>
+                  </div>
+               </div>
+            </td>
+       </tr>
+       <tr>
+           <td>
+               <div class="subbox">
+                   <h3>Bug Issues &#129300;</h3>
+                   <div class="bugbugbox">
+                     <p id="bug">If you have any errors , bugs / malfunction of options , buttons / problem in redirecting , navigating in the website , please report us by clicking on the report button available below.</p><br>
+                     <div class="report">   
+         <div class="button" id="re">Report</div> 
+        <a href="https://wa.me/916302196757?text=Bug%20Issues :">
+             <div class="social twitter" id="rep">
+                 <ion-icon name="logo-whatsapp"></ion-icon>                 
+             </div>
+        </a>
+         <a href="https://t.me/himasaicharan">
+             <div class="social twitter" id="rep1">
+                 <ion-icon name="paper-plane-outline"></ion-icon>
+             </div>  
+         </a>
+         <a href="sms://916302196757/?body=Bug%20Issues :">
+             <div class="social twitter" id="rep2">
+                 <ion-icon name="chatbubbles-outline"></ion-icon>             
+             </div> 
+         </a>
+         <a href="https://www.instagram.com/himasaicharan">
+             <div class="social twitter" id="rep3">
+                 <ion-icon name="logo-instagram"></ion-icon>
+             </div>
+         </a>
+         <h4 class="untoggle" id="tq">ThankYou for Reporting</h4>        
+                     </div>                           
+                  </div>
+               </div>
+           </td>
+       </tr>   
+       <tr>
+           <td>
+               <div class="subbox">                                             
+                   <h3>Contact Us &#128522;</h3>
+                   <div class="bugbugbox">
+                         <p id="bug">For any more details / for any updates / any wrong information / if the update isn't made till date / need more information then please Contact Us but clicking the button below.</p><br>                 
+                      <div class="report"> 
+             <div class="button" style="width:100px;" id="co">Contact Us</div>
+             <a href="https://wa.me/916302196757?text=More%20information :" target="_self"> 
+             <div class="social twitter" id="con">
+                 <ion-icon name="logo-whatsapp"></ion-icon>
+             </div>
+             </a>
+              <a href="https://t.me/himasaicharan">
+             <div class="social twitter" id="con1">
+                 <ion-icon name="paper-plane-outline"></ion-icon>
+             </div>  
+             </a>
+              <a href="sms://916302196757/?body=More%20Information :">
+             <div class="social twitter" id="con2">
+                 <ion-icon name="chatbubbles-outline"></ion-icon>             
+             </div> 
+             </a>
+             <a href="https://www.instagram.com/himasaicharan">
+             <div class="social twitter" id="con3">
+                 <ion-icon name="logo-instagram"></ion-icon>
+             </div>
+             </a>
+         <h4 class="untoggle" id="tq1">ThankYou for Contacting</h4>        
+                     </div>
+                     <p id="bug">Share our website link by clicking on the below button.</p><br>
+                     <div class="report"> 
+             <div class="button" id="sh">Share</div>
+             <a href="whatsapp://send?text=Click%20on%20the%20link%20to%20visit%20our%20Website%20:">
+             <div class="social twitter" id="sha">
+                 <ion-icon name="logo-whatsapp"></ion-icon>
+             </div>
+             </a>
+             <a href="https://telegram.me/share/url?url=www.google.com&text=This%20is%20our%20Website%20link">
+             <div class="social twitter" id="sha1">
+                 <ion-icon name="paper-plane-outline"></ion-icon>            
+             </div>  
+             </a>
+         <h4 class="untoggle" id="tq2">ThankYou for Sharing</h4>        
+                     </div>
+                   </div>
+               </div>
+           </td>
+       </tr>   
+       <tr>
+           <td>
+               <div class="subbox">
+                   <h3>About Us 😉</h3>      
+                   <div class="bugbugbox">
+                       <p id="bug"> &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Hi ! We are a group of three students studying Diploma in computer engineering at A.A.N.M & V.V.R.S.R Polytechnic . We just got interested in something new and created this website we hope u like this. Maybe we will try to improve this to next level according to our sources and interests (may or may not).We hope you are satisfied with our creation. Thank you 🌹.</p><br>
+                        <div class="report"> 
+             <div class="button" style="background-color:#1f2833;box-shadow: 0px 0px 0px,0px 0px 0px;">
+                        <div class="btn-contain">                            
+         <button class="btn">Like ❤️</button>
+         <div class="btn-particles"></div> 
+                        </div>
+            </div> 
+         </div>
+                   <ul>Sources :
+                      <li>YouTube</li> 
+                      <li>Google</li>
+                      <li>Creative thoughts from our mind</li>
+                      <li>Instagram</li>
+                   </ul>
+                   <ul>
+                       <li id="copy">&copy; Copyright-2023.</li>
+                       <li id="copy">Created by the STUDENTS. </li>
+                   </ul>
+                </div> 
+             </div>
+           </td>                                  
+       </tr>
+    </table>
+    <script>
+    $("#re").click(function() {
+$("#tq").toggleClass("klicked");
+$("#rep").toggleClass("clicked");
+$("#rep1").toggleClass("clicked");
+$("#rep2").toggleClass("clicked");
+$("#rep3").toggleClass("clicked");
+});   
+    $("#co").click(function() {
+$("#tq1").toggleClass("klicked");
+$("#con").toggleClass("clicked");
+$("#con1").toggleClass("clicked");
+$("#con2").toggleClass("clicked");
+$("#con3").toggleClass("clicked");
+});
+     $("#sh").click(function() {
+$("#tq2").toggleClass("klicked");
+$("#sha").toggleClass("clicked");
+$("#sha1").toggleClass("clicked");
+});
+</script>
+    <script>
+        $.fn.boom = function(e){ 
+var colors=['#ff0066','#ffeb00','#FF663f'];
+var shapes=[
+'<polygon class="star" points="21,0,28.053423027509677,11.29179606750063,40.97218684219823,14.510643118126104,32.412678195541844,24.70820393249937,33.34349029814194,37.989356881873896,21,33,8.656509701858067,37.989356881873896,9.587321804458158,24.70820393249937,1.0278131578017735,14.510643118126108,13.94657697249832,11.291796067509632"></polygon>',
+'<polygon class="other-star" points="18,0,22.242648687119284,13.757359312888714,36,18,22.242649687119284,22.242640687119284,18.000000000000004,36,13.757359312888716,22.242640687119284,0,18.000000000000004,13.757359312880714,13.757359312880716"></polygon>',
+'<polygon class="diamond" points="18,0,27.192388155425117,8.80761184457488,36,18,27.19238815542512,27.192388155425117,18.000000000000004,36,8.807611844574883,27.19238815542512,0,18.000000000000084,8.80761184457488,8.887611844574884"></polygon>'
+];
+var btn=$(this); 
+var group=[];
+var num=Math.floor(Math.random()*50)+30;
+for(i=0;i<num;i++){
+var randBG=Math.floor(Math.random()* colors.length);
+var getShape=Math.floor(Math.random()* shapes.length);
+var c=Math.floor(Math.random()*10)+5;
+var scale=Math.floor(Math.random()*(8-4+1)+4);
+var x=Math.floor(Math.random()*(150+ 100))-100;
+var y=Math.floor(Math.random()*(150+ 100))-100;
+var sec=Math.floor(Math.random()*1700)+1000;
+var cir=$('<div class="cir"></div>'); 
+var shape=$('<svg class="shape">'+shapes[getShape]+'</svg>');
+shape.css({
+top:e.pageY-btn.offset().top+20, 
+left:e.pageX-btn.offset().left+40,
+'transform':'scale(0.'+scale+')', 'transition':sec +'ms',
+'fill':colors[randBG]
+});
+btn.siblings('.btn-particles').append(shape);
+group.push({shape: shape,x:x, y: y});
+}
+for (var a=0; a<group.length;a++) {
+var shape=group[a].shape;
+var x=group[a].x, y = group[a].y; shape.css({
+left: x+50,
+top: y+15, 
+'transform':'scale(0)'
+});
+}
+setTimeout(function(){
+for (var b=0;b<group.length;b++) {
+var shape=group[b].shape; 
+shape.remove();
+}
+group = [];
+},2000);}
+$(function(){
+$(document).on('click', '.btn', function(e) { $(this).boom(e);});
+});
+    </script>
+</body>
+</html>

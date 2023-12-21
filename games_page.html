@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Games_Page-FANGS</title>
+    <script>
+         let prevScrollPos = window.scrollY;
+ window.addEventListener('scroll', () => {
+   const currentScrollPos = window.scrollY;
+ 
+   if (currentScrollPos > prevScrollPos && currentScrollPos > 90) {
+     // Scrolling down and scrolled more than 90px, hide the nav-bar
+     document.querySelector('.sticky-nav').classList.add('hidden');
+   } else {
+     // Scrolling up or not scrolled more than 90px, show the nav-bar
+     document.querySelector('.sticky-nav').classList.remove('hidden');
+   }
+ 
+   prevScrollPos = currentScrollPos;
+ });
+    </script>
+    <style>
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600;700;800;900&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins' , sans-serif;
+}
+body{
+    background: #2f363e;
+    padding: 25px;
+    padding-left: 40px;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+}
+body::-webkit-scrollbar {
+  width: 10px;
+  background-color: #1f2833;
+}
+
+/* Styling the scrollbar thumb */
+body::-webkit-scrollbar-thumb {
+  background-color: #c5c6c7;
+  border-radius: 10px;
+}
+
+/* Styling the scrollbar thumb on hover */
+body::-webkit-scrollbar-thumb:hover {
+  background-color: #f5f5f5;
+}
+
+/* Styling the scrollbar track in Firefox */
+body {
+  scrollbar-width: thin;
+  scrollbar-color: #c5c6c7 #f5f5f5;
+}
+
+/* Styling the scrollbar thumb in Firefox */
+body::-webkit-scrollbar-thumb {
+  background-color: #c5c6c7;
+  border-radius: 10px;
+}
+.sticky-nav.hidden {
+  top: -90px;
+}
+.sticky-nav{
+    background: #1f2833;
+    display: flex;
+    position: fixed; 
+    z-index: 100; 
+    transition: top 0.3s; 
+    height: 90px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 70px rgba(0,0,0,0.25),
+    10px 10px 70px rgba(0,0,0,0.25),
+    inset 0px 0px 10px rgba(0,0,0,0.5),
+    inset 0px 0px 20px rgba(255,255,255,0.2),
+    inset -5px -5px 15px rgba(0,0,0,0.75);
+    padding: 15px 30px;
+}
+.sticky-nav p{
+    color: #66fcf1;
+    font-size: 32px;
+    font-weight: 1000;
+}
+.page-name{
+    margin-top: 90px;
+    color: #d1e8e2;
+    text-align: center;
+    font-size: 26px;
+}
+.profile{
+    position: relative;
+    width: 100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid white;
+    border-radius: 15px;
+    padding: 40px 40px;
+}
+.profile div h2{
+    position: absolute;
+    color: #ffcb9a;
+    background: #2f363e;
+    left: 60px;
+    top: -16px;
+    padding: 0 20px;
+    font-size: 24px;
+}
+.profile p{
+    font-size: 22px;
+    color:white;
+}
+.mostly_played{
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.mostly_played h2{
+    position: relative;
+    padding: 0 20px;
+    color: #45a29e;
+}
+.mostly_played .topgames{
+    overflow: scroll;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background: rgba(0,0,0,0);
+    align-items: center;
+    gap: 5%;
+    padding: 20px;
+}
+.mostly_played .topgames::-webkit-scrollbar{
+    display: none;  
+}
+.topgames .eachgame{
+    border-radius: 50%;
+    height: 150px;
+    width: 150px;
+    background: green;
+    flex-shrink: 0;
+}
+hr{
+    height: 2px; 
+    background:white;
+    border: none; 
+    margin: 20px 10px; 
+    border-radius: 2px;
+}
+.container{
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+.row div{
+border-radius: 20px;
+}
+.row{
+grid-row: 1;
+position: relative;
+background: transparent;
+height: 210px;
+padding: 5%;
+padding-top: 0;
+display: flex;
+flex-direction: row;
+gap: 7%;
+}
+.big{
+    background: black;
+    height: 210px;
+    width: 210px;
+}
+.small{
+    background: rgba(0,0,0,0);
+    height: 100%;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+}
+.small .top{
+    background:blue;
+    height:47.5%;
+    width: 100%;
+}
+.small .bottom{
+    background: red;
+    height:47.5%;
+    width: 100%;
+}
+    </style>
+</head>
+<body>
+    <div class="sticky-nav">
+        <p>FANGS</p>
+    </div>
+    <h2 class="page-name">Games Page</h2>
+    <div class="profile">
+        <div>
+            <h2>Games & Entertainment</h2>
+        </div>
+        <p>At FANGS , we believe that entertainment should be just a click away. Our single-player games are carefully curated to offer you a diverse range of experiences. Whether you're seeking a quiet moment of reflection or a burst of creativity , we have something special for you. Our mission is simple: To bring joy and amusement to your screen. Our games are designed to provide a break from the every day hustle and offer a space where you can unwind , explore and embrace the lighter side of life.</p>
+    </div>
+    <div class="mostly_played">
+        <h2>Mostly played Games:</h2>
+        <div class="topgames">
+            <div class="eachgame"></div>
+            <div class="eachgame"></div>
+            <div class="eachgame"></div>
+            <div class="eachgame"></div>
+            <div class="eachgame"></div>
+            <div class="eachgame"></div>
+            <div class="eachgame"></div>
+            <div class="eachgame"></div>
+        </div>
+    </div>
+    <hr></hr>
+    <div class="container">
+    <div class="row">
+        <div class="big"></div>
+        <div class="small">
+        <div class="top"></div>
+        <div class="bottom"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small">
+        <div class="top"></div>
+        <div class="bottom"></div>
+        </div>
+         <div class="big"></div>        
+    </div>
+     <div class="row">
+        <div class="big"></div>
+        <div class="small">
+        <div class="top"></div>
+        <div class="bottom"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small">
+        <div class="top"></div>
+        <div class="bottom"></div>
+        </div>
+         <div class="big"></div>        
+    </div>
+     <div class="row">
+        <div class="big"></div>
+        <div class="small">
+        <div class="top"></div>
+        <div class="bottom"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small">
+        <div class="top"></div>
+        <div class="bottom"></div>
+        </div>
+         <div class="big"></div>        
+    </div>
+    </div>
+</body>
+</html>

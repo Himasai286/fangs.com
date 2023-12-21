@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="UTF-8">
+    <title>Page title</title>
+    <link href="styleall.css" rel="stylesheet">
+    <style>
+        .search
+        { 
+           margin: 2px;
+           position: relative;
+           width: 40px;
+           height: 40px;
+           background: #1f2833;
+           border-radius: 15px;
+           transition: 0.7s;
+           box-shadow: 0 0 0 2px #66fcf1;
+           overflow: hidden;
+           top: 10px;
+         }
+        .search.active
+        {
+           width: 100%;
+        }
+        .search .icon
+        {
+           position: absolute;
+           top: 0;
+           left: 0;
+           width: 40px;
+           height: 40px;
+           background: #1f2833;
+           border-radius: 40px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           z-index: 1000;
+           cursor: pointer;
+        }
+        .search .icon::before
+        {  
+           position: absolute;
+           content: '';
+           width: 15px;
+           height: 15px;
+           border: 2px  solid  #66fcf1;
+           border-radius: 50%;
+           transform: translate(-4px,-4px)
+        }
+        .search .icon::after
+        {
+           content: '' ;
+           position: abaoulte;
+           width: 2px;
+           height: 12px;
+           background: #66fcf1;
+           transform: translate(6px,6px) rotate(315deg);
+        }
+        .search .input
+        {
+           position: relative;
+           width: 55%;
+           height: 40px;
+           left: 52px;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           
+        }
+        .search .input input
+        {
+           position: absolute;
+           top: 0;
+           width: 100%;
+           height: 100%;
+           border: none;
+           outline: none;
+           font-size: 17px;
+           padding: 10px 0;
+           background-color: #1f2833;
+        }
+        .clear
+        {
+           position: absolute;
+           top: 50%;
+           transform: translateY(-50%);
+           width: 15px;
+           height: 15px;
+           right: 15px;
+           cursor: pointer;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+         }
+         .clear::before
+         {
+            position: absolute;
+            content: '';
+            width: 1px;
+            height: 15px;
+            background: #66fcf1;
+            transform: rotate(45deg);   
+         }
+         .clear::after
+         {
+            position: absolute;
+            content: '';
+            width: 1px;
+            height: 15px;
+            background: #66fcf1;
+            transform: rotate(315deg);
+         }
+         #mysearch
+         {
+             color: #45a29e;
+         }       
+         td
+         {
+             width: 50%;
+         }
+         #outerbox
+         {
+             width: 100%;
+             height: 270px;
+             background-color: #45a29e;
+             display: inline-block;
+             justify-content: center;   
+             border-radius: 25px;
+         }
+         #innerbox
+         {
+             position: relative;
+             background-color: #1f2833;     
+             height: 210px;
+             margin: 10px;
+             border-radius: 25px;
+             display: flex;
+             justify-content: center;
+             align-items: center;
+          }
+          .clean
+          {
+             display: flex;
+             justify-content: center;
+             align-items: center;
+          }
+          marquee
+          {
+              width: 80%;
+              color:#0b0c10;
+          }
+          #characteristics
+          {
+              font-size: 12px;
+              padding: 20px;
+          }
+          a
+          {
+              color: #c5c6c7;
+              
+          }
+    </style>
+</head>
+<body>
+    <div class="search" id="search">
+        <div class="icon"></div>
+        <div class="input">
+            <input type="text" placeholder="Fangs" id="mysearch">
+        </div>
+    <span class="clear" onclick="document.getElementById('mysearch').value='' "></span>
+    </div>
+    <table id="tableassign" border="0">
+        <caption style="text-align:left"><h2 >Pick your option...</h2></caption>
+        <thead >
+            <tr>
+                <td id="maths4">
+                    <a href="maths4.html" target="_top">
+                    <div id="outerbox">
+                        <div id="innerbox">
+                            <ul id="characteristics">
+                                <li>Assignment-4</li>
+                                <li>No.of questions-4</li>
+                                <li>Submition date-13/4/23</li>
+                                <li>Given date-4/4/32</li>            </ul>                                                                       
+                        </div>
+                        <div class="clean">
+                            <marquee>Maths Assignment 4</marquee> 
+                        </div>               
+                    </div>
+                    </a>
+                </td>                
+                <td id="wt4">
+                    <a href="wt4.html" target="_top">
+                    <div id="outerbox">
+                        <div id="innerbox">
+                             <ul id="characteristics">
+                                <li>Assignment-4</li>
+                                <li>No.of questions-3</li>
+                                <li>Submition date-Undeclared</li>
+                                <li>Given date-4/4/32</li>                                                                              
+                             </ul>         
+                        </div>
+                         <div class="clean">
+                            <marquee>WT Assignment 4</marquee> 
+                         </div>
+                    </div>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td id="wt3">
+                    <a href="wt3.html" target="_top">
+                    <div id="outerbox">
+                        <div id="innerbox"> 
+                            <ul id="characteristics">
+                                <li>Assignment-3</li>
+                                <li>No.of questions-4</li>
+                                <li>Submition date-Undeclared</li>
+                                <li>Given date-4/4/32</li>                                                                              
+                            </ul>                               
+                        </div>
+                        <div class="clean">
+                            <marquee>WT Assignment 3</marquee> 
+                        </div>
+                    </div>
+                    </a>
+                </td>
+                <td id="com3">
+                    <a href="com3.html" target="_top">
+                    <div id="outerbox">
+                        <div id="innerbox"> 
+                            <ul id="characteristics">
+                                <li>Assignment-3</li>
+                                <li>No.of questions-4</li>
+                                <li>Submition date-10/4/23</li>
+                                <li>Given date-1/4/32</li>                                                                              
+                            </ul>                                
+                        </div>
+                        <div class="clean">
+                            <marquee>CO & MP Assignment 3</marquee> 
+                        </div>
+                    </div>
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td id="cn4">
+                    <a href="cn4.html" target="_top">
+                    <div id="outerbox">
+                        <div id="innerbox">
+                             <ul id="characteristics">
+                                <li>Assignment-3</li>
+                                <li>No.of questions-5</li>
+                                <li>Submition date-11/4/23</li>
+                                <li>Given date-2/4/32</li>                                  
+                        </div>
+                        <div class="clean">
+                            <marquee>CN Assignment 3</marquee> 
+                        </div>
+                    </div>  
+                    </a>                 
+                </td>
+            </tr>
+        </thead>
+    </table> 
+    <script>
+document.getElementById("mysearch").addEventListener("keyup", filterTable);
+document.getElementById("search").addEventListener("click", filterTable);
+       function filterTable() {
+       var query = document.getElementById("mysearch").value.toLowerCase();
+       var cells = document.querySelectorAll("table td");
+       for (var i = 0; i < cells.length; i++){
+    var cellText = cells[i].innerText.toLowerCase();
+    if (cellText.includes(query)) {
+      cells[i].style.display = "";
+    } else {
+      cells[i].style.display = "none";
+    }
+  }
+}
+    </script>   
+    <script>
+            const icon=document.querySelector('.icon');
+     const search=document.querySelector('.search');
+     icon.onclick=function(){
+search.classList.toggle('active')
+        }
+    </script>
+</body>
+</html>

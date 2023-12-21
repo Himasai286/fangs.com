@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+<head>
+ <title>Administrator-FANGS</title>
+ <style>
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');           
+*{
+     box-sizing: border-box;
+     font-family: 'Poppins',sans-serif;
+}
+body{
+	background-image: url(admin.jpg);
+        background-repeat: no-repeat;
+  	background-size:100% 100%;
+        background-poition: center;
+        background-attachment: fixed;
+}
+h1{
+	font-size: 52px;
+	color: white;
+	margin: 5px;
+}
+h2{
+	font-size: 38px;
+	color: #86c232;
+}
+.note{
+	color: #6b6e70;
+	margin: 30px;
+	font-weight: 600;
+	margin: 20px;
+ 	position: relative;
+	font-size: 16px;
+}
+.head{
+	margin: 20px;
+	display: flex;
+	padding: 5px;
+	align-items: center;
+}
+.drop{
+	display: flex;
+	align-items: center;
+}
+select{
+	background-color:#61892f ;
+	outline: none;
+	border-radius: 5px;
+	height: 25px;
+	width: 200px;
+	font-size: 16px;
+	font-weight: 400;
+	color: white;
+}
+select:hover{
+	box-shadow: 0px 0px 9px 3px  white;
+ } 
+.text{
+	color: #6b6e70;
+	font-size: 22px;
+	font-weight: 800;
+	margin: 20px;
+}
+.run{
+	
+        height: 300px;
+	background-color: rgba(255,255,255,0.3);
+	margin: 20px;
+ 	border-radius: 25px;
+	padding: 20px;
+	overflow-y: scroll;
+	overflow-x: scroll;
+	padding: 20px;
+}
+.run::-webkit-scrollbar {
+    	display: none;
+  }
+.userinput{
+	display: none;	
+	align-items: center;
+}
+.userinput input:not(:first-child) {
+    margin-right: 70px;
+  }
+.text2{
+	color: #222629;
+	font-size: 20px;
+	font-weight: 600;
+	margin: 20px;
+}
+.inputfield{
+	border-radius: 5px;
+ 	height: 25px;
+	width: 250px;
+	border-color: white;
+}
+.finalbut{
+	border-radius: 5px;
+	font-size: 15px;
+	width: 100px;
+	height: 25px;
+ 	margin-left: 70px;
+	font-weight: 500;
+	background-color: #86c232;
+	color: white;
+	border: none;
+	margin: 20px;
+}
+.finalbut:hover{
+	box-shadow: 0px 0px 9px 3px  white;
+}
+.result{
+  	font-size: 18px;
+	font-weight: 500;
+	color: white;
+	margin: 30px;
+}
+#subbut1{
+	margin-left: 150px;
+}
+</style>
+</head>
+<body>
+  <div class="head"><h2>Welcome Back -</h2><h1> ADMINISTRATOR</h1></div>
+  <div class="drop"><p class="text">Select the Action :</p> 
+  <form method="POST" action="admindb.php">
+  <select class="list" id="dropdown" name="option">
+  	<option value="1">Select all rows</option>
+	<option value="2">Create an Account</option>
+	<option value="3">Delete an Account</option>
+	<option value="4">Change the Password</option>
+	<option value="5">Know the Password</option>
+  </select>
+  <button type="submit" class="finalbut" id="subbut1">OK</button>
+  </div>
+  <div class="run">
+   <span class="userinput" id="Id1">
+    <p class="text2" id="t1">Enter 1st detail :</p>
+    <input type="text" name="det1" id="id1" class="inputfield" placeholder="Enter Pinno">  
+    <p class="text2" id="t2">Enter 2nd detail :</p>
+    <input type="text" name="det2" id="id2" class="inputfield" placeholder="Enter Password">
+    <button type="submit" class="finalbut" id="subbut2">OK</button><br>
+   </span>
+   </form>
+   <div class="result">
+    Please click on the "OK" button to conform your operation to be performed on the database. The page will be redirect to another page. The status of your operation willl be performed there. The options of the dropdown list will display the output in the redirected page and then click the Button to redirect to this page again.
+   </div>
+  </div>
+  <p class="note">NOTE : Don't share the login details of the ADMINSTRATOR for more members. Work with the interface carefully as you make changes directly in the Database. Think a minute before making a change in the Database. Make sure for whom you are creating the Account(Dose the pinno belongs to him/she or not ?). If anyone query for the Password when they forgot, make sure that the person is asking for his/her own Account's password. Try to use this interface only in a PC, Laptop or a Computer as it doesn't have responsiveness.</p>
+<script>
+  document.getElementById('dropdown').addEventListener('change', function() {
+  var selectedOption = this.value;
+  if(selectedOption === '1') {
+  document.getElementById('subbut1').style.display = 'inline-block';
+  document.getElementById('subbut2').disabled= true;
+  document.getElementById('subbut1').disabled= false;
+  document.getElementById('subbut2').style.display = 'none';
+   document.getElementById('id1').required=false;
+    document.getElementById('id2').required=false;
+  }
+  else{
+  document.getElementById('subbut2').style.display = 'inline-block';
+  document.getElementById('subbut2').disabled= false;
+  document.getElementById('subbut1').disabled= true;
+  document.getElementById('subbut1').style.display = 'none';
+  }
+  if (selectedOption === '2') {
+    document.getElementById('Id1').style.display = 'flex';
+    document.getElementById('id2').style.display = 'flex';
+    document.getElementById('t2').style.display = 'flex';
+    document.getElementById('id1').style.display = 'flex';
+    document.getElementById('t1').style.display = 'flex';
+    document.getElementById('id1').required=true;
+    document.getElementById('id2').required=true;
+    document.getElementById('id2').placeholder="Enter Password";
+  }
+  else if (selectedOption === '3') {
+    document.getElementById('Id1').style.display = 'flex';
+    document.getElementById('id2').style.display = 'none';
+    document.getElementById('t2').style.display = 'none';
+    document.getElementById('id1').required=true;
+    document.getElementById('Id2').style.display = 'none';
+  }
+  else if (selectedOption === '4') {
+    document.getElementById('Id1').style.display = 'flex'; 
+    document.getElementById('id1').required=true;
+    document.getElementById('id2').required=true;
+    document.getElementById('id2').placeholder="Enter new Password";
+    document.getElementById('id2').style.display = 'flex';
+    document.getElementById('t2').style.display = 'flex';
+  }
+  else if (selectedOption === '5') {
+    document.getElementById('Id1').style.display = 'flex';
+    document.getElementById('id2').style.display = 'none';
+    document.getElementById('t2').style.display = 'none';
+    document.getElementById('id1').required=true;
+    document.getElementById('Id2').style.display = 'none';
+  }
+  else{
+    document.getElementById('Id1').style.display = 'none';
+    document.getElementById('Id2').style.display = 'none';
+    document.getElementById('id1').required=false;
+    document.getElementById('id2').required=false;
+    
+  }
+ });
+</script>
+<script>
+  var queryString = window.location.search;
+  var urlParams = new URLSearchParams(queryString);
+  var stringValue = urlParams.get('str');
+  document.getElementById('res').textContent=stringValue;
+</script>
+</body>
+</html>

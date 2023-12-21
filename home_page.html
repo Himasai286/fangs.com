@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <title>Home_Page-FANGS</title>
+    <link rel="stylesheet" href="nav-bar.css"
+    <style>
+           /*#66fcf1;
+           #1f2833;
+           #0b0c10;
+           #c5c6c7;
+           #45a29e;
+        */
+
+    </style>
+</head>
+<body> 
+    <div class="sticky-nav">
+        <p>FANGS</p>
+    </div>
+    <div class="edit_profile" id="edit_profile" tabindex="0">
+        <div class="edit_profile_navbar">
+            <h2>Editing Profile</h2>
+            <ion-icon name="close" id="close"></ion-icon>
+        </div>
+        <div class="profile_pic">
+            <h3>Select Profile Pic</h3>
+            <div class="selected_pic" id="selected_pic"></div>
+            <div class="select_pic">
+                <div class="col">
+                    <div class="each-img a" onclick="set_pic(this)"></div>
+                    <div class="each-img b" onclick="set_pic(this)"></div>
+                    <div class="each-img c" onclick="set_pic(this)"></div>                    
+                </div>
+                <div class="col">
+                    <div class="each-img d" onclick="set_pic(this)"></div>
+                    <div class="each-img e" onclick="set_pic(this)"></div>
+                    <div class="each-img f" onclick="set_pic(this)"></div>
+                </div>              
+                <div class="col">
+                    <div class="each-img g" onclick="set_pic(this)"></div>
+                    <div class="each-img h" onclick="set_pic(this)"></div>
+                    <div class="each-img i" onclick="set_pic(this)"></div>
+                </div>
+            </div>
+        </div>
+        <div class="edit_details">
+            <div>
+                <p>Your Name :</p>
+                <input type="text" placeholder=" FANGS..." id="name1"/>
+            </div>
+            <div>
+                <p>Your From :</p>
+                <input type="text" placeholder=" FANGS..." id="place1"/>
+            </div>
+        </div>
+        <div class="non-edit_details">
+            <hr></hr>
+            <div class="ending">
+                <h3>21030-CM-286</h3>
+            </div>
+        </div>
+        <button id="save">Save</button>
+    </div>
+    <h2 class="page-name">Home Page</h2>
+    <div class="profile">
+        <h2 class="ending"><ion-icon name="lock-closed"></ion-icon>End-to-end Encrypted</h2>
+        <div class="profile-matter">
+            <h2>Profile</h2>
+            <ul>
+                <li>Your data will not be shared except the "Pinno".</li>
+                <li>Enter your details only if your comfortable with it.</li>
+                <li>Don't share your details if you feel insure.</li>
+                <li>If you find any of your Profile details updated/changed wihtout your consent , please Report it to us.</li>
+            </ul>
+        </div>
+        <div class="profile-card">
+        <div class="card">
+            <div class="lines"></div>
+            <div class="imgBx">
+               <img src="select_pic1.jpg" alt="Img not found">
+            </div>
+            <div class="content">
+                <div class="details">
+                    <h2>21030-CM-286<br><span>Hima Sai Charan.S</span></h2>
+                    <div class="data">
+                        <h3>120k<br><span>Friends</span></h3>
+                        <h3>285<br><span>Requests</span></h3>
+                    </div>
+                    <div class="actionBtn">
+                        <span>From&nbsp;&nbsp;<h4>MUDINEPALLI</h4></span>
+                        <button id="edit_but">Edit</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div class="assignments">
+        <div class="search">
+            <h2>Assignments</h2>
+            <div class="input-div">
+                <input type="text" placeholder=" FANGS..." id="inputt"/>
+                <ion-icon name="close-outline" onclick="clearr()"></ion-icon>
+            </div>
+            <button>Search</button>
+        </div>
+        <div class="color-code">
+            <div class="box1">
+                
+            </div>
+            <div class="box2">
+
+            </div>
+        </div>
+    </div>
+    <div class="frnds">
+        <div class="container">
+            <div class="tab_box">
+                <button class="tab_btn active">Friends</button>
+                <button class="tab_btn">Friend Requests</button>
+                <button class="tab_btn">Add Friends</button>
+                <div class="line"></div>
+            </div>
+            <div class="content_box">
+                <div class="content active">
+                    <h2>Friends</h2>
+                    <P>This para is nothing about our website that where can you an get entertained here  this is nothing but thet about the thngs that  have never done i have done any tings that i can ever found int tje engagemnet that i can do it for the wholed day this is what i do the whole day as i can be the one to do ever things</P>
+                    <div class="list">
+                        <div class="imgBx">
+                            <img src="img1.jpg" alt="h">       
+                        </div>
+                        <div class="content">
+                            <h2 class="rank">
+                                <small>#</small>
+                                1
+                            </h2>
+                            <h4>Ricardo Flanagan</h4>
+                            <p>Digital Artist</p>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="imgBx">
+                            <img src="img2.jpg" alt="h">       
+                        </div>
+                        <div class="content">
+                            <h2 class="rank">
+                                <small>#</small>
+                                2
+                            </h2>
+                            <h4>Christina Shaw</h4>
+                            <p>Photoshop Expert</p>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="imgBx">
+                            <img src="img3.jpg" alt="h">       
+                        </div>
+                        <div class="content">
+                            <h2 class="rank">
+                                <small>#</small>
+                                3
+                            </h2>
+                            <h4>Clara Jones</h4>
+                            <p>Backend Developer</p>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="imgBx">
+                            <img src="img4.jpg" alt="h">       
+                        </div>
+                        <div class="content">
+                            <h2 class="rank">
+                                <small>#</small>
+                                4
+                            </h2>
+                            <h4>Mark Davis</h4>
+                            <p>Illustrator Designer</p>
+                        </div>
+                    </div>
+                    <div class="list">
+                        <div class="imgBx">
+                            <img src="img5.jpg" alt="h">       
+                        </div>
+                        <div class="content">
+                            <h2 class="rank">
+                                <small>#</small>
+                                5
+                            </h2>
+                            <h4>Sharaw Anderson</h4>
+                            <p>Food Vloggers</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="content">
+                    <h2>Friends Requests</h2>
+                    <P>This para is nothing about our website that where can you an get entertained here  this is nothing but thet about the thngs that  have never done i have done any tings that i can ever found int tje engagemnet that i can do it for the wholed day this is what i do the whole day as i can be the one to do ever things</P>
+                    
+                </div>
+                <div class="content">
+                    <h2>Add Friends</h2>
+                    <P>This para is nothing about our website that where can you an get entertained here  this is nothing but thet about the thngs that  have never done i have done any tings that i can ever found int tje engagemnet that i can do it for the wholed day this is what i do the whole day as i can be the one to do ever things</P>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        const tabs = document.querySelectorAll('.tab_btn');
+        const all_content = document.querySelectorAll('.content');
+        tabs.forEach((tab,index) =>{
+            tab.addEventListener('click',(e) => {
+                tabs.forEach(tab => {
+                    tab.classList.remove('active');
+                });
+                tab.classList.add('active');
+                var line = document.querySelector('.line');
+                line.style.width = e.target.offsetWidth + "px";
+                line.style.left = e.target.offsetLeft + "px";
+                all_content.forEach(content => {
+                    content.classList.remove('active');
+                });
+                all_content[index+1].classList.add('active');
+            });
+        });
+
+
+    function clearr(){
+        var input_tag = document.getElementById("inputt");
+        input_tag.value = "";
+    }
+
+
+    const selected_pic = document.getElementById('selected_pic');
+    function set_pic(immagge){
+        selected_pic.style.backgroundImage = window.getComputedStyle(immagge).getPropertyValue('background-image');
+    }
+
+    let list = document.querySelectorAll('.each-img');
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item) =>
+        item.addEventListener('click',activeLink));
+
+
+
+    let prevScrollPos = window.scrollY;
+    window.addEventListener('scroll', () => {
+        const currentScrollPos = window.scrollY;
+        if (currentScrollPos > prevScrollPos && currentScrollPos > 90) {
+            document.querySelector('.sticky-nav').classList.add('hidden');
+        } 
+        else {
+            document.querySelector('.sticky-nav').classList.remove('hidden');
+        }
+        prevScrollPos = currentScrollPos;
+    });
+
+
+    const profile_edit = document.getElementById('edit_profile');
+    const close_but = document.getElementById('close');
+    const profile_edit_but = document.getElementById("edit_but");
+    const name1 = document.getElementById("name1");
+    const place1 = document.getElementById("place1");
+    const save_button = document.getElementById("save");
+
+    profile_edit_but.addEventListener('click' , function(){
+        profile_edit.style.display = "flex";
+    });
+
+    profile_edit.onblur = function(){
+        if(name1.matches(":hover") || place1.matches(":hover") || save_button.matches(":hover")){
+            profile_edit.style.display = "flex";
+        }
+        else{
+            profile_edit.style.display = "none";
+        }
+    } ;
+
+    close_but.addEventListener('click' , () =>{
+        profile_edit.style.display = "none";
+    });
+     </script>
+</body>
+</html>
+
+
+
+ <!--       <div class="list">
+                <div class="imgBx">
+                    <img src="img1.jpg" alt="h">       
+                </div>
+                <div class="content">
+                    <h2 class="rank">
+                        <small>#</small>
+                        1
+                    </h2>
+                    <h4>Ricardo Flanagan</h4>
+                    <p>Digital Artist</p>
+                </div>
+            </div>
+            <div class="list">
+                <div class="imgBx">
+                    <img src="img2.jpg" alt="h">       
+                </div>
+                <div class="content">
+                    <h2 class="rank">
+                        <small>#</small>
+                        2
+                    </h2>
+                    <h4>Christina Shaw</h4>
+                    <p>Photoshop Expert</p>
+                </div>
+            </div>
+            <div class="list">
+                <div class="imgBx">
+                    <img src="img3.jpg" alt="h">       
+                </div>
+                <div class="content">
+                    <h2 class="rank">
+                        <small>#</small>
+                        3
+                    </h2>
+                    <h4>Clara Jones</h4>
+                    <p>Backend Developer</p>
+                </div>
+            </div>
+            <div class="list">
+                <div class="imgBx">
+                    <img src="img4.jpg" alt="h">       
+                </div>
+                <div class="content">
+                    <h2 class="rank">
+                        <small>#</small>
+                        4
+                    </h2>
+                    <h4>Mark Davis</h4>
+                    <p>Illustrator Designer</p>
+                </div>
+            </div>
+            <div class="list">
+                <div class="imgBx">
+                    <img src="img5.jpg" alt="h">       
+                </div>
+                <div class="content">
+                    <h2 class="rank">
+                        <small>#</small>
+                        5
+                    </h2>
+                    <h4>Sharaw Anderson</h4>
+                    <p>Food Vloggers</p>
+                </div>
+            </div>  
+            --> 

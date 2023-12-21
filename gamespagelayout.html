@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Page title</title>
+    <style>
+@import url("https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600;700;800;900&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins' , sans-serif;
+}
+body{
+    background: #2f363e;
+    padding: 25px;
+    padding-left: 40px;
+    width: 100%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 30px;
+}
+.sticky-nav.hidden {
+  top: -90px;
+}
+.sticky-nav{
+    background: #1f2833;
+    display: flex;
+    position: fixed; 
+    z-index: 100; 
+    transition: top 0.3s; 
+    height: 90px;
+    width: 100%;
+    top: 0;
+    left: 0;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 5px 5px 70px rgba(0,0,0,0.25),
+    10px 10px 70px rgba(0,0,0,0.25),
+    inset 0px 0px 10px rgba(0,0,0,0.5),
+    inset 0px 0px 20px rgba(255,255,255,0.2),
+    inset -5px -5px 15px rgba(0,0,0,0.75);
+    padding: 15px 30px;
+}
+.sticky-nav p{
+    color: #66fcf1;
+    font-size: 32px;
+    font-weight: 1000;
+}
+.page-name{
+    margin-top: 90px;
+    color: #d1e8e2;
+    text-align: center;
+    font-size: 26px;
+}
+.topgames{
+    overflow: scroll;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    background: rgba(0,0,0,0);
+    height: 100px;
+    padding: 5%;
+    padding-bottom: 0;
+    align-items: center;
+    gap: 5%;
+    
+}
+.topgames .eachgame{
+    border-radius: 50%;
+    height: 95px;
+    width: 95px;
+    background: green;
+    flex-shrink: 0;
+}
+hr{
+    height: 3px; 
+    background-color: #3498db; 
+    border: none; 
+    margin: 20px 10px; 
+}
+.container{
+    position: relative;
+    display: flex;
+    flex-wrap: nowrap;
+    flex-direction: column;
+}
+.row div{
+border-radius: 20px;
+}
+.row{
+grid-row: 1;
+position: relative;
+background: transparent;
+height: 210px;
+padding: 5%;
+padding-top: 0;
+display: flex;
+flex-direction: row;
+gap: 7%;
+}
+.big{
+    background: black;
+    height: 210px;
+    width: 210px;
+}
+.small{
+    background: rgba(0,0,0,0);
+    height: 100%;
+    width: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10%;
+}
+.small .top{
+    background:blue;
+    height:47.5%;
+    width: 100%;
+}
+.small .bottom{
+    background: red;
+    height:47.5%;
+    width: 100%;
+}
+    </style>
+</head>
+<body>
+    <div class="sticky-nav">
+        <p>FANGS</p>
+    </div>
+    <h2 class="page-name">Games Page</h2>
+    <div class="topgames">
+        <div class="eachgame"></div>
+        <div class="eachgame"></div>
+        <div class="eachgame"></div>
+        <div class="eachgame"></div>
+        <div class="eachgame"></div>
+        <div class="eachgame"></div>
+        <div class="eachgame"></div>
+        <div class="eachgame"></div>
+    </div>
+    <hr></hr>
+    <div class="container">
+    <div class="row">
+        <div class="big"></div>
+        <div class="small">
+        <div class="top"></div>
+        <div class="bottom"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small">
+        <div class="top"></div>
+        <div class="bottom"></div>
+        </div>
+         <div class="big"></div>        
+    </div>
+     <div class="row">
+        <div class="big"></div>
+        <div class="small">
+        <div class="top"></div>
+        <div class="bottom"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small">
+        <div class="top"></div>
+        <div class="bottom"></div>
+        </div>
+         <div class="big"></div>        
+    </div>
+     <div class="row">
+        <div class="big"></div>
+        <div class="small">
+        <div class="top"></div>
+        <div class="bottom"></div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="small">
+        <div class="top"></div>
+        <div class="bottom"></div>
+        </div>
+         <div class="big"></div>        
+    </div>
+    </div>
+</body>
+</html>

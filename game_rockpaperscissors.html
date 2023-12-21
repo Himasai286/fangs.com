@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Game_Rock Paper Scissors-FANGS</title>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+        
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #7d2ae8;
+}
+::selection {
+  color: #fff;
+  background-color: #7d2ae8;
+}
+.container {
+  padding: 2rem 7rem;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.result_images {
+  display: flex;
+  column-gap: 7rem;
+}
+.container.start .user_result {
+  transform-origin: left;
+  animation: userShake 0.45s ease infinite;
+}
+@keyframes userShake {
+  50% {
+    transform: rotate(10deg);
+  }
+}
+
+.container.start .cpu_result {
+  transform-origin: right;
+  animation: cpuShake 0.45s ease infinite;
+}
+@keyframes cpuShake {
+  50% {
+    transform: rotate(-10deg);
+  }
+}
+.result_images img {
+  width: 100px;
+}
+.user_result img {
+  transform: rotate(90deg);
+}
+.cpu_result img {
+  transform: rotate(-90deg) rotateY(180deg);
+}
+.result {
+  display: flex;
+   flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 2rem;
+  color: #7d2ae8;
+  margin-top: 1.5rem;
+}
+
+.option_image img {
+  width: 50px;
+}
+.option_images {
+  display: flex;
+  align-items: center;
+  margin-top: 2.5rem;
+  justify-content: space-between;
+}
+.container.start .option_images {
+  pointer-events: none;
+}
+.option_image {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+.option_image:hover {
+  opacity: 1;
+}
+.option_image.active {
+  opacity: 1;
+}
+.option_image img {
+  pointer-events: none;
+}
+.option_image p {
+  color: #7d2ae8;
+  font-size: 1.235rem;
+  margin-top: 1rem;
+  pointer-events: none;
+}
+.head{
+    position: absolute;
+    color : white;
+    top: 15px;
+}
+.score{
+    display: flex;
+    position: relative;
+    color: white;
+    width: 100%;
+}
+#hh4{
+    color: white;
+    position: relative;
+    display: flex;
+    transform: rotate(90deg);
+}
+#h4{
+    color: white;
+    position: relative;
+    display: flex;
+    transform: rotate(-90deg);
+}
+.fin_button{
+    color: white;
+    background-color: #7d2ae8;
+    border-radius: 10px;
+    outline: none;
+    width: 110px;
+    height: 30px;
+    border: none;
+    margin: 30px;
+    font-size: 14px;
+}
+.foot{
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  color: white;
+}
+.back{
+  position: absolute;
+  left: 10px;
+  top: 15px;
+  color: white;
+  cursor: pointer;
+}
+@media screen and (max-width: 678px){
+    .container{
+        padding: 1.3rem;
+    }
+   
+}
+@media screen and (max-width: 478px){
+  #h4{
+    position: absolute;
+    top: 100px;
+    left: 10px;
+    transform: rotate(0);
+    }
+    #hh4{
+    position: absolute;
+    top: 100px;
+    right: 10px;
+    transform: rotate(0);
+    }
+    h1{
+      font-size: 24px;
+    }
+    .back{
+      top: 18px;
+      left: 5px;
+    }
+}
+    </style>
+  </head>
+  <body>
+    <h1 class="back"><ion-icon name="chevron-back-outline" onclick="history.go(-1)"></ion-icon></h1>
+    <h1 class="head">Rock Paper Scissors</h1>
+       <h4 id="h4">User's Score :&nbsp;<span id="user-score"></span></h4>
+    <section class="container">
+      <div class="result_field">
+        <div class="result_images" id="res1">
+          <span class="user_result">
+            <img src="game_rockpaperscissors1.png" alt="" />
+          </span>
+          <span class="cpu_result">
+            <img src="game_rockpaperscissors1.png" alt="" />
+          </span>
+        </div>
+        <div class="result">Let's Play!!
+        </div>
+      </div>
+
+      <div class="option_images" id="res2">
+        <span class="option_image">
+          <img src="game_rockpaperscissors1.png" alt="" />
+          <p>Rock</p>
+        </span>
+        <span class="option_image">
+          <img src="game_rockpaperscissors2.png" alt="" />
+          <p>Paper</p>
+        </span>
+        <span class="option_image">
+          <img src="game_rockpaperscissors3.png" alt="" />
+          <p>Scissors</p>
+        </span>
+      </div>
+    </section>
+    <h4 id="hh4">Cpu's Score :&nbsp;<span id="cpu-score"></span></h4>
+    <h3 class="foot"><small>For</small> FANGS</h3>
+    <script>
+        const gameContainer = document.querySelector(".container"),
+  userResult = document.querySelector(".user_result img"),
+  cpuResult = document.querySelector(".cpu_result img"),
+  result = document.querySelector(".result"),
+  optionImages = document.querySelectorAll(".option_image"),
+  result_1 = document.getElementById("res1"),
+  result_2 = document.getElementById("res2"),
+  result_3 = document.getElementById("h4"),
+  result_4 = document.getElementById("hh4"),
+  user_score = document.getElementById("user-score"),
+  cpu_score = document.getElementById("cpu-score");
+  
+  let won_player = "",
+  final_player = "";
+
+//function for final winner
+function final_winner(final_player){
+setTimeout(() => {
+        const button = document.createElement("button");
+        button.textContent = "Play Again";
+        button.className = "fin_button";
+        result_1.style.display = "none";
+        result_2.style.display = "none";
+        result_3.style.display = "none";
+        result_4.style.display = "none";
+        result.textContent = final_player + " won the match!";
+        result.appendChild(button);
+        button.addEventListener("click", playAgain);
+         }, 500);
+}
+
+//function for refreshing 
+function playAgain(){
+    user_score.textContent = 0;
+    cpu_score.textContent = 0;
+    result_1.style.display = "flex";
+        result_2.style.display = "flex";
+        result_3.style.display = "flex";
+        result_4.style.display = "flex";
+    result.textContent= "Let's Play!!";
+}
+
+
+
+//intializing the score to zeor
+user_score.textContent = 0;
+cpu_score.textContent = 0;
+
+//function for incremeting score
+function increment_score(won_player){
+if(won_player=="User"){
+    user_score.textContent = parseInt(user_score.textContent) + 1;
+    if(user_score.textContent>4){
+    final_winner(won_player);
+    }
+}
+if(won_player=="Cpu"){
+    cpu_score.textContent = parseInt(cpu_score.textContent) + 1;
+    if(cpu_score.textContent>4){
+    final_winner(won_player);
+    }
+}
+}
+
+// Loop through each option image element
+optionImages.forEach((image, index) => {
+  image.addEventListener("click", (e) => {
+    image.classList.add("active");
+
+    userResult.src = cpuResult.src = "game_rockpaperscissors1.png";
+    result.textContent = "Wait...";
+
+    // Loop through each option image again
+    optionImages.forEach((image2, index2) => {
+      // If the current index doesn't match the clicked index
+      // Remove the "active" class from the other option images
+      index !== index2 && image2.classList.remove("active");
+    });
+
+    gameContainer.classList.add("start");
+
+    // Set a timeout to delay the result calculation
+    let time = setTimeout(() => {
+      gameContainer.classList.remove("start");
+
+      // Get the source of the clicked option image
+      let imageSrc = e.target.querySelector("img").src;
+      // Set the user image to the clicked option image
+      userResult.src = imageSrc;
+
+      // Generate a random number between 0 and 2
+      let randomNumber = Math.floor(Math.random() * 3);
+      // Create an array of CPU image options
+      let cpuImages = ["game_rockpaperscissors1.png", "game_rockpaperscissors2.png", "game_rockpaperscissors3.png"];
+      // Set the CPU image to a random option from the array
+      cpuResult.src = cpuImages[randomNumber];
+
+      // Assign a letter value to the CPU option (R for rock, P for paper, S for scissors)
+      let cpuValue = ["R", "P", "S"][randomNumber];
+      // Assign a letter value to the clicked option (based on index)
+      let userValue = ["R", "P", "S"][index];
+
+      // Create an object with all possible outcomes
+      let outcomes = {
+        RR: "Draw",
+        RP: "Cpu",
+        RS: "User",
+        PP: "Draw",
+        PR: "User",
+        PS: "Cpu",
+        SS: "Draw",
+        SR: "Cpu",
+        SP: "User",
+      };
+
+      // Look up the outcome value based on user and CPU options
+      let outComeValue = outcomes[userValue + cpuValue];
+
+      // Display the result
+      result.textContent = userValue === cpuValue ? "Draw!" : `${outComeValue}'s Point!`;
+      increment_score(outComeValue);
+    }, 1000);
+  });
+});
+
+    </script>
+  </body>
+</html>

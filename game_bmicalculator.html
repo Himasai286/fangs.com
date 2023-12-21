@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Game_BMI Calculator-FANGS</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <style>
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  font-family: "Nunito", sans-serif;
+  background-color: skyblue;
+}
+.back{
+  position: absolute;
+  top:10px;
+  left:0;
+}
+.title{
+  top: 5px;
+  position: relative;
+  text-align: center;
+}
+.container {
+  position: absolute;
+  left: 50%;
+  top: clamp(70px,70%,90px);
+  transform: translate(-50%, 0%);
+}
+.box {
+  padding-top: 20px;
+  min-width: 290px;
+  background: #fafafa;
+  border-radius: 38px;
+  text-align: center;
+  position: relative;
+}
+.box::before {
+  content: "";
+  position: absolute;
+  height: 110%;
+  width: 110%;
+  left: -5%;
+  top: -5%;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0px 0px 166px -31px rgba(0, 0, 0, 0.15);
+  border-radius: 60px;
+  z-index: -1;
+}
+.content {
+  padding: 0 20px;
+}
+.input {
+  background: #fff;
+  box-shadow: 0px 0px 95px -30px rgba(0, 0, 0, 0.15);
+  border-radius: 28px;
+  padding: 20px 0;
+  margin-bottom: 20px;
+}
+.input label {
+  display: block;
+  font-size: 18px;
+  font-weight: 600;
+  color: #000;
+  margin-bottom: 10px;
+}
+.input input {
+  outline: none;
+  border: none;
+  border-bottom: 1px solid #4f7df9;
+  width: 60%;
+  text-align: center;
+  font-size: 28px;
+  font-family: "Nunito", sans-serif;
+}
+button#calculate {
+  font-family: "Nunito", sans-serif;
+  color: #fff;
+  background: #4f7df9;
+  font-size: 16px;
+  border-radius: 12px;
+  padding: 12px 0;
+  width: 100%;
+  outline: none;
+  border: none;
+  transition: background 0.2s ease;
+}
+button#calculate:hover {
+  background: #0044ff;
+}
+.result {
+  padding: 15px 20px;
+}
+.result p {
+  font-weight: 600;
+  font-size: 22px;
+  color: #000;
+  margin-bottom: 15px;
+}
+.result #result {
+  font-size: 30px;
+  font-weight: 900;
+  color: #4f7df9;
+  background-color: #eaeaea;
+  display: inline-block;
+  padding: 7px 20px;
+  border-radius: 55px;
+  margin-bottom: 25px;
+}
+#comment {
+  color: #4f7df9;
+  font-weight: 800;
+}
+.foot{
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  bottom: 0px;
+}
+#alert{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  padding: 20px;
+  display: none;
+  color: white;
+  background-color: rgba(0,0,0,0.6);
+  border-radius: 20px;
+}
+@media screen and (max-width:400px){
+    .result {
+        padding: 10px 10px;
+    }
+    .result p{
+        font-size: 18px;  
+    }
+}
+@media screen and (max-width: 350px) and (max-height:650px){
+  .input input {
+    font-size: 14px;
+  }
+
+}
+    </style>
+</head>
+<body>
+    <h1 class="back"><ion-icon name="chevron-back-outline" onclick="history.go(-1)"></ion-icon></h1>
+     <h1 class="title">BMI Calculator</h1>
+    <div class="container">
+  <div class="box">
+    <div class="content">
+      <div class="input">
+        <label for="height">Height(cm)</label>
+        <input type="number" id="height">
+      </div>
+      <div class="input">
+        <label for="weight">Weight(kg)</label>
+        <input type="number" id="weight">
+      </div>
+      <button id="calculate">Calculate BMI</button>
+    </div>
+    <div class="result">
+      <p>Your BMI is</p>
+      <div id="result">00.00</div>
+      <p class="comment"></p>
+    </div>
+  </div>
+</div>
+<h3 class="foot"><small>For </small>FANGS</h3>
+<div id="alert"><h4>All feilds must be filled</h4></div>
+    <script>
+   const inputtag1 = document.getElementById("height"),
+         inputtag2 = document.getElementById("weight"),
+         foot = document.querySelector(".foot"),
+         btn = document.getElementById("calculate");
+
+btn.addEventListener("click", function () {
+  let height = document.querySelector("#height").value;
+  let weight = document.querySelector("#weight").value;
+
+  if (height == "" || weight == "") {
+    let alert = document.getElementById('alert');
+    alert.style.display= "block";
+    setInterval(function close(){
+        alert.style.display = "none";
+    }, 4000);
+    return;
+  }
+
+  // BMI = weight in KG / (height in m * height in m)
+
+  height = height / 100;
+
+  let BMI = weight / (height * height);
+
+  BMI = BMI.toFixed(2);
+       
+  document.querySelector("#result").innerHTML = BMI;
+
+  let status = "";
+
+  if (BMI < 18.5) {
+    status = "Underweight";
+  }
+  if (BMI >= 18.5 && BMI < 25) {
+    status = "Healthy";
+  }
+  if (BMI >= 25 && BMI < 30) {
+    status = "Overweight";
+  }
+  if (BMI >= 30) {
+    status = "Obese";
+  }
+  document.querySelector(
+    ".comment"
+  ).innerHTML = `Comment: you are <span id="comment">${status}</span>`;
+});
+      
+  inputtag1.addEventListener('focus' , () => {
+    if(innerWidth<600){
+      foot.style.display = "none";
+    }
+  });
+   inputtag2.addEventListener('focus' , () => {
+    if(innerWidth<600){
+      foot.style.display = "none";
+    }
+  });
+  
+  
+  inputtag1.addEventListener('blur' , () => {
+    if(innerWidth<600){
+      foot.style.display = "block";
+    }
+  });
+   inputtag2.addEventListener('blur' , () => {
+    if(innerWidth<600){
+      foot.style.display = "block";
+    }
+  });
+  
+    </script>
+</body>
+</html>
